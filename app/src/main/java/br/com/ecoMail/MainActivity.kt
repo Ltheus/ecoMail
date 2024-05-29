@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import br.com.ecoMail.screens.EmailBodyScreen
+import br.com.ecoMail.screens.HomeScreen
 import br.com.ecoMail.screens.ProfileScreen
 import br.com.ecoMail.ui.theme.EcoMailTheme
 
@@ -20,7 +21,8 @@ class MainActivity : ComponentActivity() {
                 Surface(modifier = Modifier.fillMaxSize()) {
 //                  LoginScreen()
 //                  ProfileScreen()
-                    EmailBodyScreen()
+//                  EmailBodyScreen()
+                    HomeScreen()
                 }
             }
         }
