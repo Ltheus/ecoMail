@@ -34,5 +34,47 @@ fun getEmails(): List<EmailBody> {
             emailSubject = "Orçamento",
             emailText = "Boa tarde! Gostaria de realizar um orçamento."
         ),
+        EmailBody(
+            id = 6,
+            senderName = "Nataniel",
+            emailSubject = "Orçamento",
+            emailText = "Boa tarde! Gostaria de realizar um orçamento."
+        ),
+        EmailBody(
+            id = 7,
+            senderName = "Nataniel",
+            emailSubject = "Orçamento",
+            emailText = "Boa tarde! Gostaria de realizar um orçamento."
+        ),
+        EmailBody(
+            id = 8,
+            senderName = "Nataniel",
+            emailSubject = "Orçamento",
+            emailText = "Boa tarde! Gostaria de realizar um orçamento."
+        ),
+        EmailBody(
+            id = 9,
+            senderName = "Nataniel",
+            emailSubject = "Orçamento",
+            emailText = "Boa tarde! Gostaria de realizar um orçamento."
+        ),
+        EmailBody(
+            id = 10,
+            senderName = "Nataniel",
+            emailSubject = "Orçamento",
+            emailText = "Boa tarde! Gostaria de realizar um orçamento."
+        ),
+        EmailBody(
+            id = 11,
+            senderName = "Nataniel",
+            emailSubject = "Orçamento",
+            emailText = "Boa tarde! Gostaria de realizar um orçamento."
+        ),
+        EmailBody(
+            id = 12,
+            senderName = "Nataniel",
+            emailSubject = "Orçamento",
+            emailText = "Boa tarde! Gostaria de realizar um orçamento."
+        )
     )
 }

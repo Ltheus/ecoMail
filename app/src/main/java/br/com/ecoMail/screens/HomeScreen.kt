@@ -1,6 +1,7 @@
 package br.com.ecoMail.screens
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -28,13 +29,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.ecoMail.R
 import br.com.ecoMail.repository.getEmails
 import br.com.ecoMail.ui.theme.Green
 import br.com.ecoMail.ui.theme.LightGray
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxHeight()
@@ -48,11 +50,13 @@ fun HomeScreen() {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Icon(
-                painter = painterResource(id = R.drawable.profile_icon),
-                contentDescription = "Profile",
-                modifier = Modifier.size(60.dp)
-            )
+            IconButton(onClick = { navController.navigate("profile") }) {
+                Icon(
+                    painter = painterResource(id = R.drawable.profile_icon),
+                    contentDescription = "Profile",
+                    modifier = Modifier.size(60.dp),
+                )
+            }
             Row(
                 modifier = Modifier.width(width = 210.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -149,9 +153,10 @@ fun HomeScreen() {
                             .background(color = LightGray)
                             .fillMaxWidth()
                             .height(100.dp)
-                            .padding(horizontal = 15.dp),
+                            .padding(horizontal = 15.dp)
+                            .clickable { navController.navigate("emailBody") },
                         verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                        horizontalArrangement = Arrangement.spacedBy(10.dp),
                     ) {
                         Icon(
                             painter = painterResource(id = R.drawable.profile_icon),

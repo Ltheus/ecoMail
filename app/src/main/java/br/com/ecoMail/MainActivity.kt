@@ -7,8 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import br.com.ecoMail.screens.EmailBodyScreen
 import br.com.ecoMail.screens.HomeScreen
+import br.com.ecoMail.screens.LoginScreen
 import br.com.ecoMail.screens.ProfileScreen
 import br.com.ecoMail.ui.theme.EcoMailTheme
 
@@ -19,10 +23,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             EcoMailTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-//                  LoginScreen()
-//                  ProfileScreen()
-//                  EmailBodyScreen()
-                    HomeScreen()
+                    val navController = rememberNavController()
+                    NavHost(
+                        navController = navController,
+                        startDestination = "login"
+                    ){
+                        composable(route = "login") {
+                            LoginScreen(navController = navController)
+                        }
+                        composable(route = "home"){ HomeScreen(navController = navController) }
+                        composable(route = "profile"){ ProfileScreen(navController = navController) }
+                        composable(route = "emailBody"){ EmailBodyScreen(navController = navController) }
+                    }
                 }
             }
         }

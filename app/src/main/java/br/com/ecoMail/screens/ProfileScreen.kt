@@ -33,11 +33,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.ecoMail.R
 import br.com.ecoMail.ui.theme.Green
 
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(navController: NavController) {
     var nameText by remember {
         mutableStateOf("")
     }
@@ -59,7 +60,7 @@ fun ProfileScreen() {
             horizontalArrangement = Arrangement.Start
         ) {
             IconButton(
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate("home") },
                 modifier = Modifier.size(60.dp)
             ) {
                 Icon(

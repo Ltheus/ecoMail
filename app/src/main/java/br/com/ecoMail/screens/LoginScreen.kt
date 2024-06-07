@@ -28,12 +28,13 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.ecoMail.R
 import br.com.ecoMail.ui.theme.Green
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     var emailText by remember {
         mutableStateOf("")
     }
@@ -83,7 +84,7 @@ fun LoginScreen() {
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
             )
             ElevatedButton(
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate("home") },
                 colors = ButtonDefaults.buttonColors(containerColor = Green)
             ) {
                 Text(text = "ENTER", fontSize = 24.sp)

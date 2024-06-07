@@ -25,10 +25,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.ecoMail.R
 
 @Composable
-fun EmailBodyScreen() {
+fun EmailBodyScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .padding(1.dp)
@@ -44,7 +45,7 @@ fun EmailBodyScreen() {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             IconButton(
-                onClick = { /*TODO*/ },
+                onClick = { navController.navigate("home") },
                 modifier = Modifier.size(60.dp)
             ) {
                 Icon(
